@@ -43,8 +43,89 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 //Nav
+const nav = document.querySelectorAll("nav a")
+nav.forEach ((links, i) =>
+  links.textContent = siteContent["nav"][`nav-item-${i}`]
+)
 
-const nav = document.querySelector("nav a")
-nav.forEach( element => {
-  element.textContent = siteContent["nav.length"]
-})
+const newNavLink = document.createElement('a')
+newNavLink.textContent = "Help"
+const parentElement = document.querySelector('nav')
+parentElement.appendChild(newNavLink)
+
+const newNavLink2 = document.createElement('a')
+newNavLink2.textContent = "Home"
+const parentElement2 = document.querySelector('nav')
+parentElement2.prepend(newNavLink2)
+
+const navColor = document.querySelectorAll("nav *")
+navColor.forEach ( links =>
+  links.style.color = "green"
+)
+
+//Cta
+const h1 = document.querySelector(".cta-text h1");
+h1.textContent = siteContent["cta"]["h1"]
+
+const button = document.querySelector(".cta-text button");
+button.textContent = siteContent["cta"]["button"]
+
+const img = document.querySelector("#cta-img");
+img.src = siteContent["cta"]["img-src"]
+
+//Main content top
+const featuresHeader = document.querySelector(".top-content .text-content:first-of-type h4");
+featuresHeader.textContent = siteContent["main-content"]["features-h4"]
+
+const features = document.querySelector(".top-content .text-content:first-of-type p");
+features.textContent = siteContent["main-content"]["features-content"]
+
+const aboutHeader = document.querySelector(".top-content .text-content:last-of-type h4")
+aboutHeader.textContent = siteContent["main-content"]["about-h4"]
+
+const about = document.querySelector(".top-content .text-content:last-of-type p");
+about.textContent = siteContent["main-content"]["about-content"]
+
+const middleImg = document.querySelector("#middle-img");
+middleImg.src = siteContent["main-content"]["middle-img-src"]
+
+//Main content bottom
+const servicesHeader = document.querySelector(".bottom-content .text-content:first-of-type h4");
+servicesHeader.textContent = siteContent["main-content"]["services-h4"]
+
+const services = document.querySelector(".bottom-content .text-content:first-of-type p");
+services.textContent = siteContent["main-content"]["services-content"]
+
+const productHeader = document.querySelector(".bottom-content .text-content:nth-of-type(2) h4")
+productHeader.textContent = siteContent["main-content"]["product-h4"]
+
+const product = document.querySelector(".bottom-content .text-content:nth-of-type(2) p");
+product.textContent = siteContent["main-content"]["product-content"]
+
+const visionHeader = document.querySelector(".bottom-content .text-content:last-of-type h4")
+visionHeader.textContent = siteContent["main-content"]["vision-h4"]
+
+const vision = document.querySelector(".bottom-content .text-content:last-of-type p");
+vision.textContent = siteContent["main-content"]["vision-content"]
+
+//Contact
+const contact = document.querySelectorAll(".contact *")
+contact.forEach ((line) => 
+  line.textContent = siteContent["contact"]
+)
+
+// const contactH4 = document.querySelector(".contact h4")
+// contactH4.textContent = siteContent["contact"]["contact-h4"]
+
+// const address = document.querySelector(".contact p:nth-child(1)")
+// address.textContent = siteContent["contact"]["address"]
+
+// const phone = document.querySelector(".contact p:nth-child(2)")
+// phone.textContent = siteContent["contact"]["phone"]
+
+// const email = document.querySelector(".contact p:last-child")
+// email.textContent = siteContent["contact"]["email"]
+
+//Footer
+const footer = document.querySelector("footer")
+footer.textContent = siteContent["footer"]["copyright"]

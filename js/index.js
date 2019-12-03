@@ -70,8 +70,8 @@ const cta = document.querySelectorAll(".cta-text *")
 cta.forEach ((element, i) =>
   element.textContent = elements[i]
 )
-// const h1 = document.querySelector(".cta-text h1");
-// h1.textContent = siteContent["cta"]["h1"]
+const h1 = document.querySelector(".cta-text h1");
+h1.style.wordSpacing = "100vw"
 
 const button = document.querySelector(".cta-text button");
 button.style.borderRadius = "15px"

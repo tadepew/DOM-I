@@ -45,7 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //Nav
 const nav = document.querySelectorAll("nav a")
 nav.forEach ((links, i) =>
-  links.textContent = siteContent["nav"][`nav-item-${i}`]
+  links.textContent = siteContent["nav"][`nav-item-${i+1}`]
 )
 
 const newNavLink = document.createElement('a')
@@ -64,11 +64,17 @@ navColor.forEach ( links =>
 )
 
 //Cta
-const h1 = document.querySelector(".cta-text h1");
-h1.textContent = siteContent["cta"]["h1"]
+let elements = Object.values(siteContent["cta"]);
+
+const cta = document.querySelectorAll(".cta-text *")
+cta.forEach ((element, i) =>
+  element.textContent = elements[i]
+)
+// const h1 = document.querySelector(".cta-text h1");
+// h1.textContent = siteContent["cta"]["h1"]
 
 const button = document.querySelector(".cta-text button");
-button.textContent = siteContent["cta"]["button"]
+button.style.borderRadius = "15px"
 
 const img = document.querySelector("#cta-img");
 img.src = siteContent["cta"]["img-src"]
@@ -88,6 +94,7 @@ about.textContent = siteContent["main-content"]["about-content"]
 
 const middleImg = document.querySelector("#middle-img");
 middleImg.src = siteContent["main-content"]["middle-img-src"]
+middleImg.style.borderRadius = "15px"
 
 //Main content bottom
 const servicesHeader = document.querySelector(".bottom-content .text-content:first-of-type h4");
@@ -109,22 +116,12 @@ const vision = document.querySelector(".bottom-content .text-content:last-of-typ
 vision.textContent = siteContent["main-content"]["vision-content"]
 
 //Contact
+let val = Object.values(siteContent["contact"]);
+
 const contact = document.querySelectorAll(".contact *")
-contact.forEach ((line) => 
-  line.textContent = siteContent["contact"]
+contact.forEach ((line, i) => 
+  line.textContent = val[i]
 )
-
-// const contactH4 = document.querySelector(".contact h4")
-// contactH4.textContent = siteContent["contact"]["contact-h4"]
-
-// const address = document.querySelector(".contact p:nth-child(1)")
-// address.textContent = siteContent["contact"]["address"]
-
-// const phone = document.querySelector(".contact p:nth-child(2)")
-// phone.textContent = siteContent["contact"]["phone"]
-
-// const email = document.querySelector(".contact p:last-child")
-// email.textContent = siteContent["contact"]["email"]
 
 //Footer
 const footer = document.querySelector("footer")

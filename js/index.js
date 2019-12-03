@@ -40,3 +40,89 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//Nav
+const nav = document.querySelectorAll("nav a")
+nav.forEach ((links, i) =>
+  links.textContent = siteContent["nav"][`nav-item-${i+1}`]
+)
+
+const newNavLink = document.createElement('a')
+newNavLink.textContent = "Help"
+const parentElement = document.querySelector('nav')
+parentElement.appendChild(newNavLink)
+
+const newNavLink2 = document.createElement('a')
+newNavLink2.textContent = "Home"
+const parentElement2 = document.querySelector('nav')
+parentElement2.prepend(newNavLink2)
+
+const navColor = document.querySelectorAll("nav *")
+navColor.forEach ( links =>
+  links.style.color = "green"
+)
+
+//Cta
+let elements = Object.values(siteContent["cta"]);
+
+const cta = document.querySelectorAll(".cta-text *")
+cta.forEach ((element, i) =>
+  element.textContent = elements[i]
+)
+const h1 = document.querySelector(".cta-text h1");
+h1.style.wordSpacing = "100vw"
+
+const button = document.querySelector(".cta-text button");
+button.style.borderRadius = "15px"
+
+const img = document.querySelector("#cta-img");
+img.src = siteContent["cta"]["img-src"]
+
+//Main content top
+const featuresHeader = document.querySelector(".top-content .text-content:first-of-type h4");
+featuresHeader.textContent = siteContent["main-content"]["features-h4"]
+
+const features = document.querySelector(".top-content .text-content:first-of-type p");
+features.textContent = siteContent["main-content"]["features-content"]
+
+const aboutHeader = document.querySelector(".top-content .text-content:last-of-type h4")
+aboutHeader.textContent = siteContent["main-content"]["about-h4"]
+
+const about = document.querySelector(".top-content .text-content:last-of-type p");
+about.textContent = siteContent["main-content"]["about-content"]
+
+const middleImg = document.querySelector("#middle-img");
+middleImg.src = siteContent["main-content"]["middle-img-src"]
+middleImg.style.borderRadius = "15px"
+
+//Main content bottom
+const servicesHeader = document.querySelector(".bottom-content .text-content:first-of-type h4");
+servicesHeader.textContent = siteContent["main-content"]["services-h4"]
+
+const services = document.querySelector(".bottom-content .text-content:first-of-type p");
+services.textContent = siteContent["main-content"]["services-content"]
+
+const productHeader = document.querySelector(".bottom-content .text-content:nth-of-type(2) h4")
+productHeader.textContent = siteContent["main-content"]["product-h4"]
+
+const product = document.querySelector(".bottom-content .text-content:nth-of-type(2) p");
+product.textContent = siteContent["main-content"]["product-content"]
+
+const visionHeader = document.querySelector(".bottom-content .text-content:last-of-type h4")
+visionHeader.textContent = siteContent["main-content"]["vision-h4"]
+
+const vision = document.querySelector(".bottom-content .text-content:last-of-type p");
+vision.textContent = siteContent["main-content"]["vision-content"]
+
+//Contact
+let val = Object.values(siteContent["contact"]);
+
+const contact = document.querySelectorAll(".contact *")
+contact.forEach ((line, i) => 
+  line.textContent = val[i]
+)
+
+//Footer
+const footer = document.querySelector("footer")
+footer.textContent = siteContent["footer"]["copyright"]
